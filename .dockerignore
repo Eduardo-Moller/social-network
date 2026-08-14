@@ -1,0 +1,39 @@
+.env
+
+# Build outputs
+target/
+build/
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.settings/
+.project
+.classpath
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Logs
+*.log
+logs/
+
+# Maven wrapper cache (opcional, pode manter se quiser)
+# .mvn/wrapper/maven-wrapper.jar
+
+# Testes e docs
+*.md
+docs/
