@@ -34,6 +34,12 @@ security:
     memory: 20000
     iterations: 2
 
+jwt:
+  public:
+    key: classpath:authz.pub
+  private:
+    key: classpath:authz.pem
+
 logging:
   level:
     org.hibernate.orm.jdbc.bind: trace

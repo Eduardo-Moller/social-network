@@ -29,6 +29,7 @@ public class SecurityConfig {
 								"/v3/api-docs.yaml"
 						).permitAll()
 						.requestMatchers(HttpMethod.POST, "/persons").permitAll()
+						.requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
 						.anyRequest().authenticated()
 				)
 				.build();
