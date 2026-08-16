@@ -11,11 +11,13 @@ import com.social.network.model.entity.User;
 import com.social.network.repository.UserRepository;
 import com.social.network.service.user.CreateUserService;
 import com.social.network.service.user.UniqueEmailValidatorService;
+import com.social.network.service.user.UniqueUsernameValidatorService;
 
 @Service
 @RequiredArgsConstructor
 public class CreateUserServiceImpl implements CreateUserService {
 
+	private final UniqueUsernameValidatorService uniqueUsernameValidatorService;
 	private final UniqueEmailValidatorService uniqueEmailValidatorService;
 	private final PasswordEncoder passwordEncoder;
 	private final CreateUserMapper createUserMapper;
@@ -23,6 +25,7 @@ public class CreateUserServiceImpl implements CreateUserService {
 
 	@Override
 	public User execute(CreateUserCommand command) {
+		uniqueUsernameValidatorService.validate(command.username());
 		uniqueEmailValidatorService.validate(command.email());
 
 		var passwordHash = passwordEncoder.encode(command.password());
