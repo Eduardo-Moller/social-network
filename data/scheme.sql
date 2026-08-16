@@ -24,7 +24,6 @@ CREATE TABLE social_network.person (
     birth_date DATE NOT NULL,
     bio VARCHAR(500),
     avatar_url VARCHAR(512),
-    deleted_at TIMESTAMPTZ,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

@@ -21,8 +21,18 @@ springdoc:
     enabled: true
 
 server:
+  servlet:
+    context-path: /api
   error:
     include-message: always
+
+security:
+  argon2:
+    salt-length: 16
+    hash-length: 32
+    parallelism: 1
+    memory: 20000
+    iterations: 2
 
 logging:
   level:
