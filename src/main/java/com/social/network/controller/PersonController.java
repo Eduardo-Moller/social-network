@@ -1,5 +1,6 @@
 package com.social.network.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ public class PersonController implements PersonApi {
 
 	@Override
 	public ResponseEntity<CreatePersonResponse> create(CreatePersonRequest request) {
-		return ResponseEntity.ok(createPersonService.execute(request));
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(createPersonService.execute(request));
 	}
 }

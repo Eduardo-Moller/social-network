@@ -1,6 +1,7 @@
 package com.social.network.service.person.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,6 +21,7 @@ public class CreatePersonServiceImpl implements CreatePersonService {
 	private final PersonRepository personRepository;
 
 	@Override
+	@Transactional
 	public CreatePersonResponse execute(CreatePersonRequest request) {
 		var userCommand = createPersonMapper.toUserCommand(request);
 		var user = createUserService.execute(userCommand);
